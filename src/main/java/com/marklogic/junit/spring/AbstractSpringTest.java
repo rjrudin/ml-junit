@@ -45,7 +45,7 @@ public abstract class AbstractSpringTest extends BaseTestHelper implements Appli
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) {
         this.applicationContext = applicationContext;
-        setDatabaseClientProvider(applicationContext.getBean(DatabaseClientProvider.class));
+        setDatabaseClientProvider(applicationContext.getBean("default", DatabaseClientProvider.class));
         Map<String, XccTemplate> map = applicationContext.getBeansOfType(XccTemplate.class);
         if (map.size() == 1) {
             setXccTemplate(map.values().iterator().next());
