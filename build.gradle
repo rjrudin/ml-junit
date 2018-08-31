@@ -7,8 +7,8 @@ plugins {
   id "com.github.jk1.dependency-license-report" version "0.3.11"
 }
 
-sourceCompatibility = "1.7"
-targetCompatibility = "1.7"
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
 
 repositories {
   jcenter()
@@ -16,7 +16,9 @@ repositories {
 }
 
 dependencies {
-  compile 'com.marklogic:ml-javaclient-util:3.1.0'
+  compile 'com.marklogic:ml-javaclient-util:3.8.2'
+  compileOnly 'com.marklogic:marklogic-data-hub:3.0.0'
+
   compile 'jaxen:jaxen:1.1.6'
   compile 'junit:junit:4+'
   compile 'org.springframework:spring-test:4.1.5.RELEASE'
@@ -24,7 +26,7 @@ dependencies {
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
-  classifier 'sources' 
+  classifier 'sources'
   from sourceSets.main.allJava
 }
 
@@ -42,7 +44,7 @@ publishing {
     }
   }
 }
- 
+
 if (project.hasProperty("myBintrayUser")) {
   bintray {
     user = myBintrayUser
