@@ -1,3 +1,5 @@
+This project is deprecated - please see [the marklogic-junit project in marklogic-unit-test](https://github.com/marklogic-community/marklogic-unit-test) instead. 
+
 ## What is ml-junit?
 
 The ml-junit module is designed to simplify writing JUnit 4+ tests that run against a MarkLogic instance. A typical test 
